@@ -1,4 +1,4 @@
-const taskController = require('../../controllers/tasks.controller');
+const taskController = require('../../controllers/task.controller');
 const router = require('express').Router();
 
 module.exports = router

@@ -5,7 +5,7 @@ const reg        = new RegExp('\\.js$', 'i');
 const modelsPath = path.join(__dirname, '../models');
 
 mongoose.connect('mongodb://localhost/task-api');
-mongoose.connection.on('connected', () => console.log('connected to mongo'));
+mongoose.connection.on('connected', () => console.log('connected to MongoDB'));
 
 mongoose.Promise = global.Promise;
 

@@ -6,7 +6,8 @@ const taskSchema = new Schema({
     type: String,
     trim: true,
     required: [true, 'Task title is required'],
-    minlength: [5, 'Task title length must be greater than 5']
+    minlength: [5, 'Task title length must be greater than 5'],
+    unique: true
   },
   completed: {
     type: Boolean,
@@ -16,5 +17,7 @@ const taskSchema = new Schema({
 }, {
   timestamps: true
 });
+
+taskSchema.plugin(uniqueValidator, { message: '{PATH} must be unique.' });
 
 module.exports = mongoose.model('Task', taskSchema);
