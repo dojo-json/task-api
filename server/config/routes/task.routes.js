@@ -1,7 +1,7 @@
-const taskController = require('../../controllers/task.controller');
+const taskController = require('../../controllers/tasks.controller');
 const router = require('express').Router();
 
-module.exports = router 
+module.exports = router
     .get('/', taskController.index)
     .get('/:id', taskController.show)
     .post('/', taskController.create)
