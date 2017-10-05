@@ -18,7 +18,7 @@ module.exports = {
       .catch(errorHandler.bind(response));
   },
   update(request, response) {
-    Task.fingByIdAndUpdate(request.params.id, request.body, { new: true })
+    Task.findByIdAndUpdate(request.params.id, request.body, { new: true })
       .then(task => response.json(task))
       .catch(errorHandler.bind(response));
   },
@@ -27,4 +27,4 @@ module.exports = {
       .then(task => response.json(task))
       .catch(errorHandler.bind(response));
   },
-}
+};
